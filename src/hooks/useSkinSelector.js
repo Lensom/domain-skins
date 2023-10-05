@@ -6,6 +6,7 @@ const useSkinSelector = () => {
 
   useEffect(() => {
     const domain = window.location.hostname;
+    console.log(domain, 'domain');
     setSelectedSkin(domains[domain] || 'default');
   }, []);
 

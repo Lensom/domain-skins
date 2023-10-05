@@ -7,6 +7,8 @@ function SkinSwitcher() {
   const selectedSkin = useSkinSelector();
   const [styles, setStyles] = useState({});
 
+  console.log(selectedSkin, 'selectedSkin');
+
   useEffect(() => {
     if (selectedSkin) {
       // dynamic import or request
