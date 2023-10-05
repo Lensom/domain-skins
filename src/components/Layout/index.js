@@ -9,8 +9,6 @@ const Layout = () => {
   const { styles, selectedSkin } = useContext(ThemeContext);
   const SkinComponents = skinComponents[selectedSkin] || skinComponents.default;
 
-  console.log(SkinComponents);
-
   if (selectedSkin === null || styles === null) {
     // Loader or Spinner
     return <div>Loading...</div>;
@@ -23,11 +21,12 @@ const Layout = () => {
       <main>
         Selected skin: {selectedSkin}
         <br />
+        {/* Or send to separate component */}
         {Array.isArray(SkinComponents) ? (
-          // Если SkinComponents - это массив компонентов, отобразите их все
+          // If skin components are array
           SkinComponents.map((Component, index) => <Component key={index} />)
         ) : SkinComponents ? (
-          // В противном случае отобразите один компонент
+          // If only one element
           <SkinComponents />
         ) : null}
       </main>
