@@ -5,9 +5,10 @@ import Footer from '../Footer';
 
 function SkinSwitcher() {
   const selectedSkin = useSkinSelector();
-  const [styles, setStyles] = useState({});
+  const [styles, setStyles] = useState({ default: {} });
 
   console.log(selectedSkin, 'selectedSkin');
+  console.log(styles);
 
   useEffect(() => {
     if (selectedSkin) {
@@ -25,9 +26,9 @@ function SkinSwitcher() {
 
   return (
     <>
-      <Header className={styles.default.header} />
+      <Header className={styles.default?.header} />
       <main>Selected skin: {selectedSkin}</main>
-      <Footer className={styles.default.footer} />
+      <Footer className={styles.default?.footer} />
     </>
   );
 }
