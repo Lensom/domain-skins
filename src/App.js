@@ -3,7 +3,7 @@ import ThemeContext from './context';
 import Layout from './components/Layout';
 import useSkinSelector from './hooks/useSkinSelector';
 
-import './App.scss';
+import './styles/main.scss';
 
 function App() {
   const selectedSkin = useSkinSelector();

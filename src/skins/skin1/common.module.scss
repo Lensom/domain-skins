@@ -1,5 +1,5 @@
 .footer {
-  background: #549978;
+  background: var(--d-surface-gray);
   color: #ffffff;
   padding: 10px;
   font-size: 24px;
@@ -7,7 +7,7 @@
 }
 
 .header {
-  background-color: #549978;
+  background: var(--d-surface-gray);
   color: #ffffff;
   padding: 10px;
   font-size: 24px;

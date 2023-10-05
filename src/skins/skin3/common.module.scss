@@ -1,5 +1,5 @@
 .footer {
-  background: #1e543a;
+  background: var(--l-text-link-used);
   color: #ffffff;
   padding: 10px;
   font-size: 24px;
@@ -7,7 +7,7 @@
 }
 
 .header {
-  background-color: #1e543a;
+  background-color: var(--l-text-link-used);
   color: #ffffff;
   padding: 10px;
   font-size: 24px;
