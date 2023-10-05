@@ -1,11 +1,19 @@
-import SkinSwitcher from './components/SkinSwitcher';
+import { useState } from 'react';
+import ThemeContext from './context';
+import Layout from './components/Layout';
+import useSkinSelector from './hooks/useSkinSelector';
+
 import './App.scss';
 
 function App() {
+  const selectedSkin = useSkinSelector();
+  const [styles, setStyles] = useState({ default: {} });
   return (
-    <div className="App">
-      <SkinSwitcher />
-    </div>
+    <ThemeContext.Provider value={{ selectedSkin, setStyles, styles }}>
+      <div className="App">
+        <Layout />
+      </div>
+    </ThemeContext.Provider>
   );
 }
 

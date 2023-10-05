@@ -1,36 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import useSkinSelector from '../../hooks/useSkinSelector';
-import Header from '../Header';
-import Footer from '../Footer';
+import React, { useEffect, useContext } from 'react';
+import ThemeContext from '../../context';
 
-function SkinSwitcher() {
-  const selectedSkin = useSkinSelector();
-  const [styles, setStyles] = useState({ default: {} });
-
-  console.log(selectedSkin, 'selectedSkin');
-  console.log(styles);
+const SkinSwitcher = () => {
+  const { setStyles, selectedSkin } = useContext(ThemeContext);
 
   useEffect(() => {
     if (selectedSkin) {
-      // dynamic import or request
+      // Dynamic request or import
       import(`../../skins/${selectedSkin}/common.module.scss`)
         .then((module) => setStyles(module))
-        .catch((error) => console.error('Error loading footer styles:', error));
+        .catch((error) => console.error('Error loading styles:', error));
     }
   }, [selectedSkin]);
 
-  if (selectedSkin === null || styles === null) {
-    // Loader or Spinner
-    return <div>Loading...</div>;
-  }
-
-  return (
-    <>
-      <Header className={styles.default?.header} />
-      <main>Selected skin: {selectedSkin}</main>
-      <Footer className={styles.default?.footer} />
-    </>
-  );
-}
+  // Or we can init loader there
+  return selectedSkin === null ? <div>Loading...</div> : null;
+};
 
 export default SkinSwitcher;
