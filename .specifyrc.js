@@ -1,4 +1,5 @@
-module.exports = {
+// docs.specifyapp.com/concepts/configuration#properties
+https: module.exports = {
   repository: '@autodoc/mother-test',
   personalAccessToken:
     '7c3fc0f51ed323c8a5f9a352fd7c40ade8262d19ea6b68a2a6948b547efe2473',
